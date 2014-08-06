@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="keywords" content="chrome,uodate,address,谷歌浏览器,x64,x86,下载"/>
+		<meta name="description" content="获取官方chrome的离线下载地址"/>
+		<link href="style/index.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="script/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="script/my.js"></script>
+		<title>Chrome更新地址获取器</title>
+	</head>
+	<body>
+		<div id="counter">
+			<div id="logo">
+				<img  class="xuanzhuan" id="logo_img" src="images/chrome.png"/>
+			</div>
+			<div id="main">
+				<div id="text" ></div>
+				<form onsubmit="return false;" method="POST">
+					<div class="input_a">
+						<div class="input_b">版本(Channel):</div>
+						<div class="input_c">
+							<select id="channel">
+							<option value="stable">稳定版(stable)</option>
+							<option value="beta">测试版(beta)</option>
+							<option value="dev">开发板(dev)</option>
+							<option value="canary">金丝雀版(canary)</option>
+							</select>
+						</div>
+					</div>
+					<div class="input_a">
+						<div class="input_b">
+						处理器(Processor):
+						</div>
+						<div class="input_c">
+							<select id="processor">
+							<option value="x86">32位版(x86)</option>
+							<option value="x64">64位版(x64)</option>						
+						</select>
+						</div>
+					</div>
+					<input type="image" src="images/get.png"/>
+				</form>
+			</div>
+			<div id="float">
+				<div id="float_top">
+					<a id="off" href="javascript:closeFloat();">X</a>
+					<img src="images/chrome.png"/>
+					<ul id="info">
+					</ul>
+				</div>
+				<div  id="float_bottom">
+					下载地址：
+					<ul id="urls">
+					</ul>
+				</div>
+			</div>
+			<img id="loading" class="xuanzhuan " src="images/chrome.png"/>
+		</div>
+	</body>
+</html>

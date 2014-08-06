@@ -1,0 +1,152 @@
+﻿body{
+background-color:#ccc;
+text-align:center;
+}
+#counter{
+margin:auto;
+width:1000px;
+height:600px;
+background-color:white;
+box-shadow: 5px 5px 5px #888888;
+border-radius: 100px 0 100px 0;
+border:3px dashed pink;
+}
+#logo{
+background-color:#eee;
+border-radius: 100px 0 0  0;
+height:100%;
+width:300px;
+float:left;
+}
+@-webkit-keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+@keyframes rotate {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+.xuanzhuan{
+-webkit-animation-name: rotate;
+-webkit-animation-duration: 5s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+animation-name: rotate;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+#loading{
+width:100px;
+height:100px;
+position:fixed;
+top:0;
+left:0;
+bottom:0;
+right:0;
+margin:auto;
+animation-duration: 1s;
+-webkit-animation-duration: 1s;
+display:none;
+}
+#main{
+text-align:center;
+height:600px;
+width:700px;
+float:right;
+}
+#text{
+background:url(../images/text.png) no-repeat;
+width:500px;
+height:100px;
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+margin-top:50px;
+}
+.input_a{
+height:100px;
+width:700px;
+line-height:100px;
+font-size:20px;
+}
+.input_b{
+clear:left;
+float:left;
+width:200px;
+text-align:right;
+}
+.input_c{
+float:left;
+width:500px;
+}
+.input_c select{
+background-color:pink;
+height:60px;
+width:80%;
+}
+#float{
+position:fixed;
+border:2px solid black;
+width:600px;
+height:500px;
+display:none;
+left:0;
+top:0;
+bottom:0;
+right:0;
+margin:auto;
+background-color:white;
+box-shadow: 10px 10px 5px #888888;
+border-radius: 20px;
+}
+#float #off{
+display:block;
+font-weight:700;
+width:1em;
+height:1em;
+position:absolute;
+right:5px;
+top:5px;
+color:black;
+}
+#float_top {
+text-align:left;
+width:100%;
+border-bottom:5px dotted #fcf;
+}
+#float_bottom{
+clear:both;
+text-align:left;
+padding-top:20px;
+}
+#float img{
+width:100px;
+height:100px;
+}
+ul{
+list-style-type:none;
+padding:0;
+}
+li:nth-of-type(odd){
+background-color:#fef;
+}
+li:nth-of-type(even){
+background-color:white;
+}
+#info{
+font-size:12px;
+float:right;
+position:absolute;
+top:30px;
+right:0;
+margin-right:5px;
+}
+#urls{
+overflow:scroll; 
+font-size:18px;
+width:80%;
+margin:auto;
+padding-top:20px;
+min-height:300px;
+}
