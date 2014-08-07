@@ -1,5 +1,6 @@
 <?php
-error_reporting(~E_ALL);
+error_reporting(E_ALL);
+set_time_limit(60);
 /*****************************
 ****respose example
 <?xml version="1.0" encoding="UTF-8"?>
@@ -14,12 +15,12 @@ error_reporting(~E_ALL);
 		<li>b</li>
 	</urls>
 </update>
-
-******************************/
 if($_SERVER['REQUEST_METHOD']=='GET'){
 	header('Location:/',false,301);
 	die();
 	}
+******************************/
+
 include 'chrome.lib.php';
 $u = new Updater();
 $u->setChannel($_REQUEST['channel']);

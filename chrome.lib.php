@@ -20,7 +20,7 @@ public function __construct($name,$version,$size,$hash,$urls){
 class Updater{
 private $channel ;
 public $xml;
-private $url ="https://tools.google.com/service/update2";
+private $url ='https://tools.google.com/service/update2';
 private $userAgent="Google Update/1.3.23.9;winhttp";
 //if use proxy
 private $useProxy = false;

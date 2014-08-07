@@ -49,7 +49,7 @@ $(function () {
 				});
 				$(xml).find("url").each(function (id) {
 					a = $(this).text();
-					$("<li><a href=\"" + a + "\">" + a + "</a></li>").appendTo("#urls");
+					$("<li><a href=\"" + a + "\" target=\"_blank\">" + a + "</a></li>").appendTo("#urls");
 				});
 				loading(false);
 				$("#float").fadeIn();
