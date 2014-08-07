@@ -3,17 +3,18 @@ error_reporting(~E_ALL);
 /*****************************
 ****respose example
 <?xml version="1.0" encoding="UTF-8"?>
-<up>
-	<info>
+<update>
+	<infos>
 		<li>版本号</li>
 		<li>大小</li>
 		<li>HASH</li>		
-	</info>
+	</infos>
 	<urls>
 		<li>a</li>
 		<li>b</li>
 	</urls>
-</up>
+</update>
+
 ******************************/
 if($_SERVER['REQUEST_METHOD']=='GET'){
 	header('Location:/',false,301);
@@ -26,21 +27,17 @@ $u-> buildXML($_REQUEST['arch']);
 $u->request();
 $u->fetchUrls();
 $dom = new DOMDocument;
-$up = $dom->createElement('up');
+$up = $dom->createElement('update');
 $dom->appendChild($up);
-$info = $dom->createElement('info');
-$up->appendChild($info);
-$info->appendChild($dom->createElement('li','版本号：'.$u->model->version));
-$info->appendChild($dom->createElement('li','大小：'.$u->model->size));
-$info->appendChild($dom->createElement('li','Hash：'.$u->model->hash));
+$infos = $dom->createElement('infos');
+$up->appendChild($infos);
+$infos->appendChild($dom->createElement('info','版本号：'.$u->model->version));
+$infos->appendChild($dom->createElement('info','大小：'.$u->model->size));
+$infos->appendChild($dom->createElement('info','Hash：'.$u->model->hash));
 $urls=$dom->createElement('urls');
 $up->appendChild($urls);
 foreach($u->model->urls as $url){
-	$li = $dom->createElement('li');
-	$a = $dom->createElement('a',$url);
-	$urls->appendChild($li);
-	$li->appendChild($a);
-	$a -> setAttribute('href',$url);
-	$a -> setAttribute('target','__blank');
+	$_url = $dom->createElement('url',$url);
+	$urls->appendChild($_url);
 	}
 echo $dom->saveXML();	

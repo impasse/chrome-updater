@@ -27,6 +27,8 @@ function anim() {
 $(function () {
 	$("form").bind("submit", function () {
 		loading(true);
+		//reset li
+		$("li").remove();
 		$.ajax({
 			url : "response.php",
 			type : "POST",
@@ -35,14 +37,20 @@ $(function () {
 				"channel" : $("#channel option:selected").val(),
 				"arch" : $("#processor option:selected").val()
 			},
-			timeout : 10000,
+			timeout : 30000,
 			error : function (xml, type, excp) {
 				alert(type);
 				loading(false);
 			},
 			success : function (xml) {
-				$("#info").html($(xml).find("info").html());
-				$("#urls").html($(xml).find("urls").html());
+				$(xml).find("info").each(function (id) {
+					a = $(this).text();
+					$("<li>" + a + "</li>").appendTo("#info");
+				});
+				$(xml).find("url").each(function (id) {
+					a = $(this).text();
+					$("<li><a href=\"" + a + "\">" + a + "</a></li>").appendTo("#urls");
+				});
 				loading(false);
 				$("#float").fadeIn();
 			}

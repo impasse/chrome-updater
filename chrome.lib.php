@@ -1,9 +1,4 @@
 <?php
-error_reporting(~E_ALL);
-if($_SERVER['REQUEST_METHOD']=='GET'){
-	header('Location:/',false,301);
-	die();
-	}
 class UpdaterModel{
 //Update result model
 public $name;
@@ -105,7 +100,7 @@ curl_setopt($c, CURLOPT_URL,$this->url);
 curl_setopt($c, CURLOPT_POST, true);
 curl_setopt($c, CURLOPT_USERAGENT,$this->userAgent);
 curl_setopt($c,CURLOPT_FOLLOWLOCATION,true);
-curl_setopt($c, CURLOPT_TIMEOUT, 60);
+curl_setopt($c, CURLOPT_TIMEOUT, 30);
 curl_setopt($c,CURLOPT_HTTPHEADER,$head);
 if($this->useProxy){
 curl_setopt($c, CURLOPT_PROXY,$this->proxy_host);
