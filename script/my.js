@@ -37,7 +37,7 @@ $(function () {
 				"channel" : $("#channel option:selected").val(),
 				"arch" : $("#processor option:selected").val()
 			},
-			timeout : 30000,
+			timeout : 300000,
 			error : function (xml, type, excp) {
 				alert(type);
 				loading(false);
